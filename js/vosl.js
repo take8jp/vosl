@@ -349,10 +349,10 @@ $(function(){
      		});
 				$(".share_btn").click(function(){
 					if(getParam('lang') == null){
-						var share_btn_link = "https://twitter.com/share?url=http://take8jp.starfree.jp/vosl/&hashtags=VOSList";
+						var share_btn_link = "https://twitter.com/share?url=https://take8jp.github.io/vosl/&hashtags=VOSList";
 						window.open(share_btn_link, "_blank");
 					} else{
-						var share_btn_link = "https://twitter.com/share?url=http://take8jp.starfree.jp/vosl/?lang=" + getParam('lang') + "&hashtags=VOSList";
+						var share_btn_link = "https://twitter.com/share?url=https://take8jp.github.io/vosl/?lang=" + getParam('lang') + "&hashtags=VOSList";
 						window.open(share_btn_link, "_blank");
 					}
 				});
