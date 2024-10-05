@@ -303,6 +303,7 @@ $(function(){
 								$(".detail_txt").text("Learn more");//詳しくはこちら
 								$(".share_btn").text("Share on X");//Xでシェアする
 								$("#search").attr("placeholder","Enter search words");//検索ワードを入力
+								$(".left_link_txt").text("Click here for cover song");//歌ってみたはこちら
 								$('.genre_txt').each(function(){
 									var genre_txt = $(this).html();
 									$(this).html(
@@ -337,6 +338,7 @@ $(function(){
 								$(".detail_txt").text("자세한 것은 이쪽");//詳しくはこちら
 								$(".share_btn").text("X로 공유");//Xでシェアする
 								$("#search").attr("placeholder","검색어 입력");//検索ワードを入力
+								$(".left_link_txt").text("커버곡은 여기");//歌ってみたはこちら
 								$('.genre_txt').each(function(){
 									var genre_txt = $(this).html();
 									$(this).html(
