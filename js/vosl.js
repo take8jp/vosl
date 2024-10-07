@@ -239,8 +239,18 @@ $(function(){
 						$('#search').quicksearch('#VOSL>.col', {
 							'noResults': '#noresults',//検索該当無しの場合表示する対象
 						});
+						$('#search2').quicksearch('#artist_name_tag>.artist_name_list', {
+							'noResults': '#noresults2',//検索該当無しの場合表示する対象
+						});
 					});
 					$("#search").keydown(function (e) {
+						if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
+							return false;
+						} else {
+							return true;
+						}
+					});
+					$("#search2").keydown(function (e) {
 						if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
 							return false;
 						} else {
@@ -286,7 +296,7 @@ $(function(){
 								$(".search_btn01").text("Search by Vtuber name");//Vtuber名で検索
 								$(".search_btn02").text("Search by Release Year");//リリース年で検索
 								$(".search_btn03").text("Search by Genre");//ジャンルで検索
-								$("#noresults").text("Not found.");//見つかりませんでした
+								$(".noresults").text("Not found.");//見つかりませんでした
 								$(".title_genre").text("Genre");//ジャンル
 								$(".title_release").text("Release year");//リリース年
 								$(".title_belonging").text("belonging");//所属
@@ -321,7 +331,7 @@ $(function(){
 								$(".search_btn01").text("Vtuber 이름으로 검색");//Vtuber名で検索
 								$(".search_btn02").text("출시년도 검색");//リリース年で検索
 								$(".search_btn03").text("장르로 검색");//ジャンルで検索
-								$("#noresults").text("찾을 수 없음");//見つかりませんでした
+								$(".noresults").text("찾을 수 없음");//見つかりませんでした
 								$(".title_genre").text("장르");//ジャンル
 								$(".title_release").text("출시년도");//リリース年
 								$(".title_belonging").text("소속");//所属

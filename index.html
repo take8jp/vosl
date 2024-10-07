@@ -75,6 +75,8 @@
 			<div class="mb-4 small">
 				<a href="#artist_name" class="btn popup-modal text-bg-secondary mb-1 btn-sm search_btn01" title="Vtuber名で検索">Vtuber名で検索</a>
 				<div id="artist_name" class="mfp-hide modal_bg">
+					<input class="form-control mb-2" name="search_name" type="search" placeholder="Vtuber名で検索" aria-label="Search" value="" id="search2">
+					<div id="noresults2" class="mt-5 mb-5 text-center h3 noresults">見つかりませんでした</div>
 					<div id="artist_name_tag"></div>
 					<div class="badge text-bg-dark mx-1 popup-modal-dismiss clear_txt" onclick="$('#search').val('').quicksearch('#VOSL>.col', {});">クリア</div>
 				</div>
@@ -90,7 +92,7 @@
 				</div>
 			</div>
 			<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-4" id="VOSL"></div>
-			<div id="noresults" class="mt-5 mb-5 text-center h3">見つかりませんでした</div>
+			<div id="noresults" class="mt-5 mb-5 text-center h3 noresults">見つかりませんでした</div>
 		</div>
 		<div class="text-center mb-5">
 			<a href="#" class="share_btn btn text-bg-secondary" title="Xでシェアする">Xでシェアする</a>
