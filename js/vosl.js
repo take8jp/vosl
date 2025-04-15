@@ -84,6 +84,22 @@ $(function(){
 //					 if(csvList_vosl[i][7]==""){}else{
 //					insert_vosl += '<div class=""><div class="user_icon rounded-circle" style=" background: url(' + csvList_vosl[i][7] + ')center center;"></div></div>';
 //					};
+					 //new
+					 const tourokubi = csvList_vosl[i][19];
+					 const tourokubi02 = tourokubi.substring(0,10);
+					 const tourokubi03 = tourokubi02.replace(/(\\|\/)/g,"");
+					 const today = new Date();
+					 const year = today.getFullYear();
+						const month = ("0"+(today.getMonth() + 1)).slice(-2);
+						const date = ("0"+today.getDate()).slice(-2);
+					 var today2 = year +""+ month +""+ date;
+					 var newicon = tourokubi03 - today2;
+					 //insert_vosl += newicon;
+					 if(newicon>-30){
+					 insert_vosl += '<small class="small"><span class="badge text-bg-danger small" style="position:absolute;top:4px;left:4px;">NEW!</span></small>';
+					 }
+					 
+					 //new
           insert_vosl += '</div>';
 					insert_vosl += '<div class="card-body">';
 					insert_vosl += '<h5 class="card-title mb-1">' + csvList_vosl[i][3] + '</h5>';
