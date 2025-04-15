@@ -81,9 +81,9 @@ $(function(){
 					insert_vosl += '<div class="thum">';
 					//insert_vosl += '<img src="https://img.youtube.com/vi/' + youtubeid + '/sddefault.jpg" class="card-img-top" alt="...">';
 					insert_vosl += '<img src="Images/loading-buffering.gif" data-src="https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg" class="card-img-top lazyload" alt="..." width="320" height="180">';
-					 if(csvList_vosl[i][7]==""){}else{
-					insert_vosl += '<div class=""><div class="user_icon rounded-circle" style=" background: url(' + csvList_vosl[i][7] + ')center center;"></div></div>';
-					};
+//					 if(csvList_vosl[i][7]==""){}else{
+//					insert_vosl += '<div class=""><div class="user_icon rounded-circle" style=" background: url(' + csvList_vosl[i][7] + ')center center;"></div></div>';
+//					};
           insert_vosl += '</div>';
 					insert_vosl += '<div class="card-body">';
 					insert_vosl += '<h5 class="card-title mb-1">' + csvList_vosl[i][3] + '</h5>';
