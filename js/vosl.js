@@ -80,7 +80,7 @@ $(function(){
 					insert_vosl += '<div class="card">';
 					insert_vosl += '<div class="thum">';
 					//insert_vosl += '<img src="https://img.youtube.com/vi/' + youtubeid + '/sddefault.jpg" class="card-img-top" alt="...">';
-					insert_vosl += '<img src="Images/loading-buffering.gif" data-src="https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg" class="card-img-top lazyload" alt="..." width="320" height="180">';
+					insert_vosl += '<a href="#exampleModal' + i + '" class="popup-modal" title="' + csvList_vosl[i][3] + '"><img src="Images/loading-buffering.gif" data-src="https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg" class="card-img-top lazyload" alt="' + csvList_vosl[i][3] + '" width="320" height="180"></a>';
 //					 if(csvList_vosl[i][7]==""){}else{
 //					insert_vosl += '<div class=""><div class="user_icon rounded-circle" style=" background: url(' + csvList_vosl[i][7] + ')center center;"></div></div>';
 //					};
@@ -122,7 +122,7 @@ $(function(){
           insert_vosl += '</div>';
           insert_vosl += '<div class="d-flex justify-content-between align-items-center mt-2">';
           insert_vosl += '<div class="btn-group">';
-          insert_vosl += '<a href="' + csvList_vosl[i][2] + '" target="_blank" class="btn btn-sm btn-outline-secondary woy">Youtubeで見る</a>';
+          insert_vosl += '<a href="' + csvList_vosl[i][2] + '" target="_blank" class="btn btn-sm btn-outline-secondary woy" title="Youtube">Youtubeで見る</a>';
           insert_vosl += '<a href="#exampleModal' + i + '" class="btn btn-sm btn-outline-secondary popup-modal details_btn">詳細</a>';
           insert_vosl += '</div>';
 					 if(csvList_vosl[i][5]==""){}else{
@@ -244,9 +244,7 @@ $(function(){
             })
           );
 				 //画像load
-  				$(".lazyload").lazyload({
-  					effect: 'fadeIn'
-  				});
+  				$("img.lazyload").lazyload({effect:'fadeIn'});
 				 //検索
          	$(function search() {
 						$('#search').quicksearch('#VOSL>.col', {
