@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="x-ua-compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>これからもずっと</title>
+	<meta property="og:title" content="これからもずっと" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://take8jp.github.io/vosl/korekaramo/" />
+	<meta property="og:image" content="https://take8jp.github.io/vosl/korekaramo/Images/1500x500.jpg" />
+	<meta property="og:site_name" content="これからもずっと" />
+	<meta property="og:description" content="WEB音ゲー｜オリジナル曲" />
+	<!-- ※Twitter共通設定 -->
+	<meta name="twitter:card" content="Summary with Large Image" />
+	<meta name="twitter:site" content="@take8_jp" />
+<!--	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">-->
+<style>
+	body{ width: 100%; height: 100vh; background: url(Images/loading.gif)center center no-repeat;}
+	html,body{ background:#fff; width: 100%; overflow: hidden;}
+	#asumi-frame-44-2877,p{display: none !important;}
+</style>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JXYG46EPFN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JXYG46EPFN');
+</script>
+</head>
+<body>
+  <script src='https://cdn.rawgit.com/phi-jp/phina.js/v0.2.1/build/phina.js'></script>
+  <script type="text/javascript">
+    'use strict';
+    if (!phina.util.Support.webAudio) {
+      alert('webAudioに対応していません！最新のブラウザを使って下さい！');
+    }
+    // IE対策
+     var ua = phina.global.navigator.userAgent;
+     if (ua.indexOf('Trident') > 0) {
+       alert('インターネットエクスプローラーには対応してません！');
+     }
+    phina.globalize();
+  </script>
+  <script src="./config.js?2023"></script>
+  <script src="./components.js?2023"></script>
+  <script src="./GameOverScene.js"></script>
+  <script src="./mainscene.js?2023"></script>
+  <script src="./titlescene.js?2023"></script>
+  <script type="text/javascript">
+    phina.main(function() {
+      var app = GameApp({
+        assets: ASSETS,
+        width: SCREEN_WIDTH,
+        height: SCREEN_HEIGHT,
+        startLabel: 'TitleScene',
+        backgroundColor: '#fff',
+        title: 'オリジナル曲',
+        fps: 60,
+				scenes: [
+        // タイトル
+        {
+          label: "TitleScene", // ラベル。参照用
+          className: "TitleScene", // シーンAのクラス名
+        },
+        // メイン
+        {
+          label: "MainScene",
+          className: "MainScene",
+          //nextLabel: "タイトル" // シーン終了時に次に遷移するシーンのラベル
+        },
+				// ゲームオーバーシーンを追加
+        {
+          label: "GameOverScene",
+          className: "GameOverScene"
+        }
+      ]
+      });
+		
+
+      // app.enableStats();
+      app.run();
+    });
+  </script>
+</body>
+</html>
