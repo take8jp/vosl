@@ -212,7 +212,7 @@ var shareButton =　Button({
 .addChildTo(this)
 .on('push', function() {
 	SoundManager.stopMusic();
-	window.top.location.href = 'https://twitter.com/intent/tweet?text=これからもずっとで ' + self.totalScore + 'pt 獲得しました&url=https://take8jp.github.io/vosl/korekaramo/';
+	window.top.location.href = 'https://twitter.com/intent/tweet?text=これからもずっとで ' + self.totalScore + 'pt 獲得しました&url=https://take8jp.github.io/vosl/korekaramo/index.html';
 	//window.open('https://twitter.com/intent/tweet?text=LightFantasyで ' + self.totalScore + 'pt 獲得しました&url=http://take8.xxxxxxxx.jp/LightFantasy/&hashtags=TAKE8ゲーム', '_blank')
 	this.exit('TitleScene');
 });

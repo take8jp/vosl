@@ -92,7 +92,7 @@ phina.define('TitleScene', {
     .addChildTo(this)
     .on('push', function() {
       SoundManager.stopMusic();
-			window.top.location.href = 'https://take8jp.github.io/vosl/chirashizushi/';
+			window.top.location.href = 'https://take8jp.github.io/vosl/chirashizushi/index.html';
       this.exit('TitleScene');
     });
 //		// 明滅させる
@@ -115,7 +115,7 @@ phina.define('TitleScene', {
     .addChildTo(this)
     .on('push', function() {
       SoundManager.stopMusic();
-			window.top.location.href = 'https://twitter.com/intent/tweet?text=これからもずっと&url=https://take8jp.github.io/vosl/korekaramo/';
+			window.top.location.href = 'https://twitter.com/intent/tweet?text=これからもずっと&url=https://take8jp.github.io/vosl/korekaramo/index.html';
       this.exit('TitleScene');
     });
 //		// 明滅させる
@@ -141,7 +141,7 @@ phina.define('TitleScene', {
 		.on('push', function() {
 			SoundManager.stopMusic();
 			//location.href = 'https://twitter.com/intent/tweet?text=LightFantasy(🎮)&url=http://take8.xxxxxxxx.jp/LightFantasy/&hashtags=TAKE8ゲーム';
-			window.top.location.href = 'https://twitter.com/intent/tweet?text=これからもずっと&url=https://take8jp.github.io/vosl/korekaramo/';
+			window.top.location.href = 'https://twitter.com/intent/tweet?text=これからもずっと&url=https://take8jp.github.io/vosl/korekaramo/index.html';
 			//window.open('https://twitter.com/intent/tweet?text=LightFantasy(🎮)&url=http://take8.xxxxxxxx.jp/LightFantasy/&hashtags=TAKE8ゲーム', '_self')
 			this.exit('TitleScene');
 		});
