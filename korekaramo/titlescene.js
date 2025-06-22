@@ -115,7 +115,7 @@ phina.define('TitleScene', {
     .addChildTo(this)
     .on('push', function() {
       SoundManager.stopMusic();
-			window.top.location.href = 'https://twitter.com/intent/tweet?text=これからもずっと&url=https://take8jp.github.io/vosl/korekaramo/index.html';
+			window.top.location.href = 'https://www.youtube.com/watch?v=V7rLujnLfGo';
       this.exit('TitleScene');
     });
 //		// 明滅させる

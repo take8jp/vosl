@@ -50,6 +50,11 @@
 		.fs12{ font-size: 12px;}
 		.btn{ display: inline-block; background: #f00; color:#fff; padding: 10px; width: 100px; border-radius: 20px;}
 		.btn:hover{ background: #000;}
+		iframe.youtube {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
 /*--sp------------------------------*/
 @media screen and (max-width: 719px)
 {
@@ -101,7 +106,12 @@
 	<section id="MOVIE">
 		<div class="inner text-center">
 			<h3 class="mb40 fadebottom1"><img src="img/title02.png" alt=""></h3>
-			<p class="mb60 fadebottom1"><img src="img/movie01.png" alt=""></p>
+			<div class="mb60 fadebottom1">
+<!--				<img src="img/movie01.png" alt="">-->
+				<div class="">
+					<iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/V7rLujnLfGo?si=xHL4oITXuA1fna38" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</div>
+			</div>
 			
 			<div class="scroll-infinity">
 				<div class="scroll-infinity__wrap">
