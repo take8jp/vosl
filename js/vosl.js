@@ -159,6 +159,7 @@ $(function(){
 						} else{
 					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
 						}
+					insert_vosl += '<span class="badge text-bg-secondary mx-1">' + csvList_vosl[i][20] + '</span>';
 					insert_vosl += '</div>';
           insert_vosl += '<div class="col">';
 					insert_vosl += '<table class="table table-sm">';
@@ -200,6 +201,11 @@ $(function(){
 					insert_vosl += '</table>';
 					insert_vosl += '<div class="search_only">' + csvList_vosl[i][1] + '' + csvList_vosl[i][4] + '' + csvList_vosl[i][17] + '' + csvList_vosl[i][18] + '</div>';
 					 insert_vosl += '<div class="text-center pb-1 mb-2"><a href="https://twitter.com/share?url=' + csvList_vosl[i][2] + '&text=私の推し曲は（' + csvList_vosl[i][1] + '）の『' + csvList_vosl[i][3] + '』です！%0a理由：◯◯%0aエピソード：◯◯%0a&hashtags=ぶいあーる" target="_blank" class="btn text-bg-secondary mb-1 btn-sm kikaku03">この楽曲を #ぶいあーる でポスト</a><br/><a href="https://www.nhk.jp/p/vr-radio/rs/6N87LJL8ZM/" target="_blank" ><small class="detail_txt small">詳しくはこちら</small></a></div>';
+					 if(csvList_vosl[i][20]=="ユニット・グループ"){
+						 insert_vosl += '<div class="text-center pb-1 mb-2"><a href="https://twitter.com/share?url=' + csvList_vosl[i][2] + '&text=（' + csvList_vosl[i][1] + '）の『' + csvList_vosl[i][3] + '』に投票します！&hashtags=VTuber楽曲ランキング,ミューコミVR" target="_blank" class="btn text-bg-secondary mb-1 btn-sm">この楽曲を #VTuber楽曲ランキング #ミューコミVR でポスト<div class="small">※現在活動中の女性ユニット、グループが対象です。</div></a><br/><a href="https://x.com/mc1242/status/1964710511511298301" target="_blank" ><small class="detail_txt small">詳しくはこちら</small></a></div>';
+					 }else{};
+					 
+					 
 					insert_vosl += '</div>';
 					insert_vosl += '</div>';
           insert_vosl += '</div>';
@@ -307,6 +313,7 @@ $(function(){
 								$(".search_btn01").text("Search by Vtuber name");//Vtuber名で検索
 								$(".search_btn02").text("Search by Release Year");//リリース年で検索
 								$(".search_btn03").text("Search by Genre");//ジャンルで検索
+								$(".search_btn04").text("Unit/Group");//ユニット・グループ
 								$(".noresults").text("Not found.");//見つかりませんでした
 								$(".title_genre").text("Genre");//ジャンル
 								$(".title_release").text("Release year");//リリース年
@@ -342,6 +349,7 @@ $(function(){
 								$(".search_btn01").text("Vtuber 이름으로 검색");//Vtuber名で検索
 								$(".search_btn02").text("출시년도 검색");//リリース年で検索
 								$(".search_btn03").text("장르로 검색");//ジャンルで検索
+								$(".search_btn04").text("유닛·그룹");//ユニット・グループ
 								$(".noresults").text("찾을 수 없음");//見つかりませんでした
 								$(".title_genre").text("장르");//ジャンル
 								$(".title_release").text("출시년도");//リリース年
