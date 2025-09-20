@@ -98,8 +98,10 @@ $(function(){
 					 if(newicon>-30){
 					 insert_vosl += '<small class="small"><span class="badge text-bg-danger small" style="position:absolute;top:4px;left:4px;">NEW!</span></small>';
 					 }
-					 
 					 //new
+					 if(csvList_vosl[i][13] == ""){} else{
+							insert_vosl += '<small class="small"><span class="badge text-bg-warning small" style="position:absolute;top:4px;right:4px;">ReMIX!</span></small>';
+					 }
           insert_vosl += '</div>';
 					insert_vosl += '<div class="card-body">';
 					insert_vosl += '<h5 class="card-title mb-1">' + csvList_vosl[i][3] + '</h5>';
