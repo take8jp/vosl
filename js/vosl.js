@@ -203,9 +203,9 @@ $(function(){
 					insert_vosl += '</table>';
 					insert_vosl += '<div class="search_only">' + csvList_vosl[i][1] + '' + csvList_vosl[i][4] + '' + csvList_vosl[i][17] + '' + csvList_vosl[i][18] + '</div>';
 					 insert_vosl += '<div class="text-center pb-1 mb-2"><a href="https://twitter.com/share?url=' + csvList_vosl[i][2] + '&text=私の推し曲は（' + csvList_vosl[i][1] + '）の『' + csvList_vosl[i][3] + '』です！%0a理由：◯◯%0aエピソード：◯◯%0a&hashtags=ぶいあーる" target="_blank" class="btn text-bg-secondary mb-1 btn-sm kikaku03">この楽曲を #ぶいあーる でポスト</a><br/><a href="https://www.nhk.jp/p/vr-radio/rs/6N87LJL8ZM/" target="_blank" ><small class="detail_txt small">詳しくはこちら</small></a></div>';
-					 if(csvList_vosl[i][20]=="ユニット・グループ"){
-						 insert_vosl += '<div class="text-center pb-1 mb-2"><a href="https://twitter.com/share?url=' + csvList_vosl[i][2] + '&text=（' + csvList_vosl[i][1] + '）の『' + csvList_vosl[i][3] + '』に投票します！&hashtags=VTuber楽曲ランキング,ミューコミVR" target="_blank" class="btn text-bg-secondary mb-1 btn-sm">この楽曲を #VTuber楽曲ランキング #ミューコミVR でポスト<div class="small">※現在活動中の女性ユニット、グループが対象です。</div></a><br/><a href="https://x.com/mc1242/status/1964710511511298301" target="_blank" ><small class="detail_txt small">詳しくはこちら</small></a></div>';
-					 }else{};
+//					 if(csvList_vosl[i][20]=="ユニット・グループ"){
+//						 insert_vosl += '<div class="text-center pb-1 mb-2"><a href="https://twitter.com/share?url=' + csvList_vosl[i][2] + '&text=（' + csvList_vosl[i][1] + '）の『' + csvList_vosl[i][3] + '』に投票します！&hashtags=VTuber楽曲ランキング,ミューコミVR" target="_blank" class="btn text-bg-secondary mb-1 btn-sm">この楽曲を #VTuber楽曲ランキング #ミューコミVR でポスト<div class="small">※現在活動中の女性ユニット、グループが対象です。</div></a><br/><a href="https://x.com/mc1242/status/1964710511511298301" target="_blank" ><small class="detail_txt small">詳しくはこちら</small></a></div>';
+//					 }else{};
 					 
 					 
 					insert_vosl += '</div>';
