@@ -170,22 +170,22 @@ $(function(){
 						insert_vosl += '<tr><th class="small table_th01 title_genre">ジャンル</th><td class="genre_txt">' + csvList_vosl[i][4] + '</td></tr>';
 					};
 					 if(csvList_vosl[i][5]==""){}else{
-					insert_vosl += '<tr><th class="small table_th01 title_release">リリース年</th><td>' + csvList_vosl[i][5] + ' <a  href="index.html?search=' + csvList_vosl[i][5] + '"><i class="bi bi-search"></i></a></td></tr>';
+					insert_vosl += '<tr><th class="small table_th01 title_release">リリース年</th><td>' + csvList_vosl[i][5] + ' <a  href="index.html?search=' + csvList_vosl[i][5] + '" alt="' + csvList_vosl[i][5] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][6]==""){}else{
-					insert_vosl += '<tr><th class="small table_th01 title_belonging">所属</th><td>' + csvList_vosl[i][6] + '</td></tr>';
+					insert_vosl += '<tr><th class="small table_th01 title_belonging">所属</th><td>' + csvList_vosl[i][6] + ' <a  href="index.html?search=' + csvList_vosl[i][6] + '" alt="' + csvList_vosl[i][6] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][8]==""){}else{
-					insert_vosl += '<tr><th class="small table_th01 title_lyrics">作詞</th><td>' + csvList_vosl[i][8] + '</td></tr>';
+					insert_vosl += '<tr><th class="small table_th01 title_lyrics">作詞</th><td>' + csvList_vosl[i][8] + ' <a  href="index.html?search=' + csvList_vosl[i][8] + '" alt="' + csvList_vosl[i][8] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][9]==""){}else{
-					insert_vosl += '<tr><th class="small table_th01 title_composer">作曲</th><td>' + csvList_vosl[i][9] + '</td></tr>';
+					insert_vosl += '<tr><th class="small table_th01 title_composer">作曲</th><td>' + csvList_vosl[i][9] + ' <a  href="index.html?search=' + csvList_vosl[i][9] + '" alt="' + csvList_vosl[i][9] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][10]==""){}else{
-					insert_vosl += '<tr><th class="small table_th01 title_arranger">編曲</th><td>' + csvList_vosl[i][10] + '</td></tr>';
+					insert_vosl += '<tr><th class="small table_th01 title_arranger">編曲</th><td>' + csvList_vosl[i][10] + ' <a  href="index.html?search=' + csvList_vosl[i][10] + '" alt="' + csvList_vosl[i][10] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][11]==""){}else{
-					insert_vosl += '<tr><th class="small table_th01">MIX</th><td>' + csvList_vosl[i][11] + '</td></tr>';
+					insert_vosl += '<tr><th class="small table_th01">MIX</th><td>' + csvList_vosl[i][11] + ' <a  href="index.html?search=' + csvList_vosl[i][11] + '" alt="' + csvList_vosl[i][11] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][12]==""){}else{
 					insert_vosl += '<tr><th class="small table_th01 title_player">演奏</th><td>' + csvList_vosl[i][12] + '</td></tr>';
