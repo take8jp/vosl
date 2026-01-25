@@ -170,7 +170,7 @@ $(function(){
 						insert_vosl += '<tr><th class="small table_th01 title_genre">ジャンル</th><td class="genre_txt">' + csvList_vosl[i][4] + '</td></tr>';
 					};
 					 if(csvList_vosl[i][5]==""){}else{
-					insert_vosl += '<tr><th class="small table_th01 title_release">リリース年</th><td>' + csvList_vosl[i][5] + '</td></tr>';
+					insert_vosl += '<tr><th class="small table_th01 title_release">リリース年</th><td>' + csvList_vosl[i][5] + ' <a  href="index.html?search=' + csvList_vosl[i][5] + '"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][6]==""){}else{
 					insert_vosl += '<tr><th class="small table_th01 title_belonging">所属</th><td>' + csvList_vosl[i][6] + '</td></tr>';
