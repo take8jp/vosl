@@ -318,6 +318,7 @@ $(function(){
 								$(".search_btn03").text("Search by Genre");//ジャンルで検索
 								$(".search_btn04").text("Unit/Group");//ユニット・グループ
 								$(".noresults").text("Not found.");//見つかりませんでした
+								$(".title_artist").text("artist");//アーティスト
 								$(".title_genre").text("Genre");//ジャンル
 								$(".title_release").text("Release year");//リリース年
 								$(".title_belonging").text("belonging");//所属
@@ -354,6 +355,7 @@ $(function(){
 								$(".search_btn03").text("장르로 검색");//ジャンルで検索
 								$(".search_btn04").text("유닛·그룹");//ユニット・グループ
 								$(".noresults").text("찾을 수 없음");//見つかりませんでした
+								$(".title_artist").text("아티스트");//アーティスト
 								$(".title_genre").text("장르");//ジャンル
 								$(".title_release").text("출시년도");//リリース年
 								$(".title_belonging").text("소속");//所属
@@ -371,6 +373,43 @@ $(function(){
 								$(".share_btn").text("X로 공유");//Xでシェアする
 								$("#search").attr("placeholder","검색어 입력");//検索ワードを入力
 								$(".left_link_txt").text("커버곡은 여기");//歌ってみたはこちら
+								$('.genre_txt').each(function(){
+									var genre_txt = $(this).html();
+									$(this).html(
+										genre_txt.replace(/ベース/g,'base').replace(/ロック/g,'ROCK').replace(/フィーチャー/g,'Fture ').replace(/ハイテック/g,'High-Tech').replace(/ダブステップ/g,'Dobstep').replace(/コア/g,'Core').replace(/和風/g,'Japanese-style ')
+									);
+								});
+							}else if(url.indexOf('lang=zh-TW') !== -1){
+								//alert("en");
+								$('html').attr('lang', 'zh-cmn-Hant');
+								$("body").addClass("lang_zh-cmn-Hant");
+								$(".info_txt").html("本網站收錄了虛擬YouTuber與虛擬歌手創作的原創歌曲及混音作品。我們期待收到您的來信。");//info
+								$(".form_btn").text("在另一個分頁開啟表單");//別タブでフォームを開く
+								$(".woy").text("Youtube");//Youtubeで見る
+								$(".details_btn").text("詳細");//詳細
+								$(".search_btn01").text("以Vtuber名稱搜尋");//Vtuber名で検索
+								$(".search_btn02").text("依發行年份搜尋");//リリース年で検索
+								$(".search_btn03").text("按類型搜尋");//ジャンルで検索
+								$(".search_btn04").text("單元・團體");//ユニット・グループ
+								$(".noresults").text("找不到");//見つかりませんでした
+								$(".title_artist").text("藝術家");//アーティスト
+								$(".title_genre").text("類型");//ジャンル
+								$(".title_release").text("發行年份");//リリース年
+								$(".title_belonging").text("所屬");//所属
+								$(".title_lyrics").text("作詞");//作詞
+								$(".title_composer").text("作曲");//作曲
+								$(".title_arranger").text("編曲");//編曲
+								$(".title_player").text("演奏");//演奏
+								$(".title_stream").text("訂閱服務");//サブスク
+								$(".stream_txt").text("透過串流收聽");//ストリーミングで聞く
+								$(".clear_txt").text("清除");//クリア
+								$(".kikaku01").text("將此曲目發佈於 #VTuber楽曲ランキング");//この楽曲を#VTuber楽曲ランキングでポスト
+								$(".kikaku02").text("※本活動對象為目前正在活動中的VTuber");//※現在活動中のVTuberが対象です
+								$(".kikaku03").text("將這首樂曲以「#ぶいあーる」標籤發布");//この楽曲を#ぶいあーるでポスト
+								$(".detail_txt").text("詳情請參閱此處");//詳しくはこちら
+								$(".share_btn").text("在X上分享");//Xでシェアする
+								$("#search").attr("placeholder","輸入搜尋關鍵字");//検索ワードを入力
+								$(".left_link_txt").text("試唱版本請點此");//歌ってみたはこちら
 								$('.genre_txt').each(function(){
 									var genre_txt = $(this).html();
 									$(this).html(
