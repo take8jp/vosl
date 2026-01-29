@@ -48,6 +48,8 @@ $(function(){
 					 insert_artist_name += '<div class="artist_name_list v_name_txt badge text-bg-secondary mx-1 popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'' + csvList_artist_name[i][17] + '\').quicksearch(\'#VOSL>.col\', {});">' + csvList_artist_name[i][17] + '</div>';
 							} else if(url.indexOf('lang=ko') !== -1){
 					 insert_artist_name += '<div class="artist_name_list v_name_txt badge text-bg-secondary mx-1 popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'' + csvList_artist_name[i][18] + '\').quicksearch(\'#VOSL>.col\', {});">' + csvList_artist_name[i][18] + '</div>';
+							} else if(url.indexOf('lang=zh-TW') !== -1){
+					 insert_artist_name += '<div class="artist_name_list v_name_txt badge text-bg-secondary mx-1 popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'' + csvList_artist_name[i][21] + '\').quicksearch(\'#VOSL>.col\', {});">' + csvList_artist_name[i][21] + '</div>';
 							} else{
 					 insert_artist_name += '<div class="artist_name_list v_name_txt badge text-bg-secondary mx-1 popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'' + csvList_artist_name[i][1] + '\').quicksearch(\'#VOSL>.col\', {});">' + csvList_artist_name[i][1] + '</div>';
 							}
@@ -111,6 +113,8 @@ $(function(){
 								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][17] + '</small></a></div>';
 							} else if(url.indexOf('lang=ko') !== -1){
 								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][18] + '</small></a></div>';
+							} else if(url.indexOf('lang=zh-TW') !== -1){
+								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][21] + '</small></a></div>';
 							} else{
 								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
 							}
@@ -155,18 +159,37 @@ $(function(){
 					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][17] + '</small></a></div>';
 							} else if(url.indexOf('lang=ko') !== -1){
 					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][18] + '</small></a></div>';
+							}else if(url.indexOf('lang=zh-TW') !== -1){
+					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][21] + '</small></a></div>';
 							}else{
 					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
 							}
 						} else{
 					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
 						}
-					insert_vosl += '<span class="badge text-bg-secondary mx-1">' + csvList_vosl[i][20] + '</span>';
+					insert_vosl += '<span class="badge text-bg-secondary mx-1 group">' + csvList_vosl[i][20] + '</span>';
 					insert_vosl += '</div>';
           insert_vosl += '<div class="col">';
 					insert_vosl += '<table class="table table-sm">';
 					insert_vosl += '<tbody>';
+					 
+					 
+					 
+					 if(params.length>1){
+							var url = decodeURI(location.search)
+							if(url.indexOf('lang=en') !== -1){
+					insert_vosl += '<tr><th class="small table_th01 title_artist">アーティスト</th><td>' + csvList_vosl[i][17] + ' <a  href="index.html?search=' + csvList_vosl[i][17] + '" title="' + csvList_vosl[i][17] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
+							} else if(url.indexOf('lang=ko') !== -1){
+					insert_vosl += '<tr><th class="small table_th01 title_artist">アーティスト</th><td>' + csvList_vosl[i][18] + ' <a  href="index.html?search=' + csvList_vosl[i][18] + '" title="' + csvList_vosl[i][18] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
+							}else if(url.indexOf('lang=zh-TW') !== -1){
+					insert_vosl += '<tr><th class="small table_th01 title_artist">アーティスト</th><td>' + csvList_vosl[i][21] + ' <a  href="index.html?search=' + csvList_vosl[i][21] + '" title="' + csvList_vosl[i][21] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
+							}else{
 					insert_vosl += '<tr><th class="small table_th01 title_artist">アーティスト</th><td>' + csvList_vosl[i][1] + ' <a  href="index.html?search=' + csvList_vosl[i][1] + '" title="' + csvList_vosl[i][1] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
+							}
+						} else{
+					insert_vosl += '<tr><th class="small table_th01 title_artist">アーティスト</th><td>' + csvList_vosl[i][1] + ' <a  href="index.html?search=' + csvList_vosl[i][1] + '" title="' + csvList_vosl[i][1] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
+						}
+					
 					if(csvList_vosl[i][4]==""){}else{
 						insert_vosl += '<tr><th class="small table_th01 title_genre">ジャンル</th><td class="genre_txt">' + csvList_vosl[i][4] + '</td></tr>';
 					};
@@ -202,7 +225,7 @@ $(function(){
 					};
 					insert_vosl += '</tbody>';
 					insert_vosl += '</table>';
-					insert_vosl += '<div class="search_only">' + csvList_vosl[i][1] + '' + csvList_vosl[i][4] + '' + csvList_vosl[i][17] + '' + csvList_vosl[i][18] + '</div>';
+					insert_vosl += '<div class="search_only">' + csvList_vosl[i][1] + '' + csvList_vosl[i][4] + '' + csvList_vosl[i][17] + '' + csvList_vosl[i][18] + '' + csvList_vosl[i][21] + '</div>';
 					 insert_vosl += '<div class="text-center pb-1 mb-2"><a href="https://twitter.com/share?url=' + csvList_vosl[i][2] + '&text=私の推し曲は（' + csvList_vosl[i][1] + '）の『' + csvList_vosl[i][3] + '』です！%0a理由：◯◯%0aエピソード：◯◯%0a&hashtags=ぶいあーる" target="_blank" class="btn text-bg-secondary mb-1 btn-sm kikaku03">この楽曲を #ぶいあーる でポスト</a><br/><a href="https://www.nhk.jp/p/vr-radio/rs/6N87LJL8ZM/" target="_blank" ><small class="detail_txt small">詳しくはこちら</small></a></div>';
 //					 if(csvList_vosl[i][20]=="ユニット・グループ"){
 //						 insert_vosl += '<div class="text-center pb-1 mb-2"><a href="https://twitter.com/share?url=' + csvList_vosl[i][2] + '&text=（' + csvList_vosl[i][1] + '）の『' + csvList_vosl[i][3] + '』に投票します！&hashtags=VTuber楽曲ランキング,ミューコミVR" target="_blank" class="btn text-bg-secondary mb-1 btn-sm">この楽曲を #VTuber楽曲ランキング #ミューコミVR でポスト<div class="small">※現在活動中の女性ユニット、グループが対象です。</div></a><br/><a href="https://x.com/mc1242/status/1964710511511298301" target="_blank" ><small class="detail_txt small">詳しくはこちら</small></a></div>';
@@ -342,6 +365,12 @@ $(function(){
 										genre_txt.replace(/ベース/g,'base').replace(/ロック/g,'ROCK').replace(/フィーチャー/g,'Fture ').replace(/ハイテック/g,'High-Tech').replace(/ダブステップ/g,'Dobstep').replace(/コア/g,'Core').replace(/和風/g,'Japanese-style ')
 									);
 								});
+								$('.group').each(function(){
+									var group = $(this).html();
+									$(this).html(
+										group.replace(/ソロ/g,'solo').replace(/ユニット・グループ/g,'unit group')
+									);
+								});
 							}else if(url.indexOf('lang=ko') !== -1){
 								//alert("en");
 								$('html').attr('lang', 'ko');
@@ -379,6 +408,12 @@ $(function(){
 										genre_txt.replace(/ベース/g,'base').replace(/ロック/g,'ROCK').replace(/フィーチャー/g,'Fture ').replace(/ハイテック/g,'High-Tech').replace(/ダブステップ/g,'Dobstep').replace(/コア/g,'Core').replace(/和風/g,'Japanese-style ')
 									);
 								});
+								$('.group').each(function(){
+									var group = $(this).html();
+									$(this).html(
+										group.replace(/ソロ/g,'솔로').replace(/ユニット・グループ/g,'유닛 그룹')
+									);
+								});
 							}else if(url.indexOf('lang=zh-TW') !== -1){
 								//alert("en");
 								$('html').attr('lang', 'zh-cmn-Hant');
@@ -414,6 +449,12 @@ $(function(){
 									var genre_txt = $(this).html();
 									$(this).html(
 										genre_txt.replace(/ベース/g,'base').replace(/ロック/g,'ROCK').replace(/フィーチャー/g,'Fture ').replace(/ハイテック/g,'High-Tech').replace(/ダブステップ/g,'Dobstep').replace(/コア/g,'Core').replace(/和風/g,'Japanese-style ')
+									);
+								});
+								$('.group').each(function(){
+									var group = $(this).html();
+									$(this).html(
+										group.replace(/ソロ/g,'獨奏').replace(/ユニット・グループ/g,'單位組')
 									);
 								});
 							}
