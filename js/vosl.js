@@ -108,6 +108,7 @@ $(function(){
           insert_vosl += '</div>';
 					
 					insert_vosl += '<div class="card-body">';
+					insert_vosl += '<div class="search_only">' + csvList_vosl[i][1] + '' + csvList_vosl[i][4] + '' + csvList_vosl[i][17] + '' + csvList_vosl[i][18] + '' + csvList_vosl[i][21] + '' + csvList_vosl[i][23] + '</div>';
 					insert_vosl += '<p class="small mb-1"><i class="bi bi-clock-fill"></i> ' + csvList_vosl[i][22] + '</p>';
 					insert_vosl += '<h5 class="card-title mb-1">' + csvList_vosl[i][3] + '</h5>';
 					 if(params.length>1){
@@ -156,7 +157,9 @@ $(function(){
 						}
 //					insert_vosl += '<iframe src="https://www.youtube.com/embed/' + youtubeid + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
 					insert_vosl += '</div>';
-					 if(params.length>1){
+					insert_vosl += '<p class="small mb-1"><i class="bi bi-clock-fill"></i> ' + csvList_vosl[i][22] + '</p>';
+					insert_vosl += '<div class="youtube-tag mb-1">' + csvList_vosl[i][23] + '</div>';
+					if(params.length>1){
 							var url = decodeURI(location.search)
 							if(url.indexOf('lang=en') !== -1){
 					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][17] + '</small></a></div>';
@@ -200,16 +203,16 @@ $(function(){
 					insert_vosl += '<tr><th class="small table_th01 title_release">リリース年</th><td>' + csvList_vosl[i][5] + ' <a  href="index.html?search=' + csvList_vosl[i][5] + '" title="' + csvList_vosl[i][5] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][6]==""){}else{
-					insert_vosl += '<tr><th class="small table_th01 title_belonging">所属</th><td>' + csvList_vosl[i][6] + ' <a  href="index.html?search=' + csvList_vosl[i][6] + '" title="' + csvList_vosl[i][6] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
+					insert_vosl += '<tr><th class="small table_th01 title_belonging">所属</th><td>' + csvList_vosl[i][6] + ' <a href="index.html?search=' + csvList_vosl[i][6] + '" title="' + csvList_vosl[i][6] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][8]==""){}else{
-					insert_vosl += '<tr><th class="small table_th01 title_lyrics">作詞</th><td>' + csvList_vosl[i][8] + ' <a  href="index.html?search=' + csvList_vosl[i][8] + '" title="' + csvList_vosl[i][8] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
+					insert_vosl += '<tr><th class="small table_th01 title_lyrics">作詞</th><td>' + csvList_vosl[i][8] + ' <a href="index.html?search=' + csvList_vosl[i][8] + '" title="' + csvList_vosl[i][8] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][9]==""){}else{
-					insert_vosl += '<tr><th class="small table_th01 title_composer">作曲</th><td>' + csvList_vosl[i][9] + ' <a  href="index.html?search=' + csvList_vosl[i][9] + '" title="' + csvList_vosl[i][9] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
+					insert_vosl += '<tr><th class="small table_th01 title_composer">作曲</th><td>' + csvList_vosl[i][9] + ' <a href="index.html?search=' + csvList_vosl[i][9] + '" title="' + csvList_vosl[i][9] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][10]==""){}else{
-					insert_vosl += '<tr><th class="small table_th01 title_arranger">編曲</th><td>' + csvList_vosl[i][10] + ' <a  href="index.html?search=' + csvList_vosl[i][10] + '" title="' + csvList_vosl[i][10] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
+					insert_vosl += '<tr><th class="small table_th01 title_arranger">編曲</th><td>' + csvList_vosl[i][10] + ' <a href="index.html?search=' + csvList_vosl[i][10] + '" title="' + csvList_vosl[i][10] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
 					};
 					 if(csvList_vosl[i][11]==""){}else{
 					insert_vosl += '<tr><th class="small table_th01">MIX</th><td>' + csvList_vosl[i][11] + ' <a  href="index.html?search=' + csvList_vosl[i][11] + '" title="' + csvList_vosl[i][11] + 'を検索"><i class="bi bi-search"></i></a></td></tr>';
@@ -228,7 +231,6 @@ $(function(){
 					};
 					insert_vosl += '</tbody>';
 					insert_vosl += '</table>';
-					insert_vosl += '<div class="search_only">' + csvList_vosl[i][1] + '' + csvList_vosl[i][4] + '' + csvList_vosl[i][17] + '' + csvList_vosl[i][18] + '' + csvList_vosl[i][21] + '</div>';
 					 insert_vosl += '<div class="text-center pb-1 mb-2"><a href="https://twitter.com/share?url=' + csvList_vosl[i][2] + '&text=私の推し曲は（' + csvList_vosl[i][1] + '）の『' + csvList_vosl[i][3] + '』です！%0a理由：◯◯%0aエピソード：◯◯%0a&hashtags=ぶいあーる" target="_blank" class="btn text-bg-secondary mb-1 btn-sm kikaku03">この楽曲を #ぶいあーる でポスト</a><br/><a href="https://www.nhk.jp/p/vr-radio/rs/6N87LJL8ZM/" target="_blank" ><small class="detail_txt small">詳しくはこちら</small></a></div>';
 //					 if(csvList_vosl[i][20]=="ユニット・グループ"){
 //						 insert_vosl += '<div class="text-center pb-1 mb-2"><a href="https://twitter.com/share?url=' + csvList_vosl[i][2] + '&text=（' + csvList_vosl[i][1] + '）の『' + csvList_vosl[i][3] + '』に投票します！&hashtags=VTuber楽曲ランキング,ミューコミVR" target="_blank" class="btn text-bg-secondary mb-1 btn-sm">この楽曲を #VTuber楽曲ランキング #ミューコミVR でポスト<div class="small">※現在活動中の女性ユニット、グループが対象です。</div></a><br/><a href="https://x.com/mc1242/status/1964710511511298301" target="_blank" ><small class="detail_txt small">詳しくはこちら</small></a></div>';
@@ -264,6 +266,16 @@ $(function(){
 						const string = li.textContent;
 						texts_genre.has(string) ? li.remove() : texts_genre.add(string);
 					}
+				 
+			//ハッシュタグ成型
+			document.querySelectorAll('.youtube-tag').forEach(ul => {
+				const text = ul.textContent;
+				// 日本語対応ハッシュタグ抽出
+				const tags = text.match(/#[\w\u3040-\u30ff\u4e00-\u9faf]+/g);
+				if (!tags) return;
+				ul.innerHTML = tags.map(tag => `<a class="badge text-bg-secondary me-1 popup-modal-dismiss" onclick="$('#search').val('${tag}').quicksearch('#VOSL>.col', {});">${tag}</a>`).join('');
+			});
+			//ハッシュタグ成型ここまで
 				 //ランダム表示
           var bool = [1, -1];
           $('#artist_name_tag').html(
@@ -461,6 +473,7 @@ $(function(){
 									);
 								});
 							}
+							
 						}
        		}
      		});
@@ -489,8 +502,8 @@ $(function(){
           }, 500);
           return false;
         });
+	
       });
-			
 			window.onload = function() {
 				const spinner = document.getElementById('loading');
 				spinner.classList.add('loaded');
