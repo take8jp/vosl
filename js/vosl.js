@@ -1,3 +1,4 @@
+
 $(function(){
 				function getParam(name, url) {
 					if (!url) url = window.location.href;
@@ -105,7 +106,9 @@ $(function(){
 							insert_vosl += '<small class="small"><span class="badge text-bg-warning small" style="position:absolute;top:4px;right:4px;">ReMIX!</span></small>';
 					 }
           insert_vosl += '</div>';
+					
 					insert_vosl += '<div class="card-body">';
+					insert_vosl += '<p class="small mb-1"><i class="bi bi-clock-fill"></i> ' + csvList_vosl[i][22] + '</p>';
 					insert_vosl += '<h5 class="card-title mb-1">' + csvList_vosl[i][3] + '</h5>';
 					 if(params.length>1){
 							var url = decodeURI(location.search)
