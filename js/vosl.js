@@ -49,6 +49,8 @@ $(function(){
 					 insert_artist_name += '<div class="artist_name_list v_name_txt badge text-bg-secondary mx-1 popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'' + csvList_artist_name[i][17] + '\').quicksearch(\'#VOSL>.col\', {});">' + csvList_artist_name[i][17] + '</div>';
 							} else if(url.indexOf('lang=ko') !== -1){
 					 insert_artist_name += '<div class="artist_name_list v_name_txt badge text-bg-secondary mx-1 popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'' + csvList_artist_name[i][18] + '\').quicksearch(\'#VOSL>.col\', {});">' + csvList_artist_name[i][18] + '</div>';
+							} else if(url.indexOf('lang=es') !== -1){
+					 insert_artist_name += '<div class="artist_name_list v_name_txt badge text-bg-secondary mx-1 popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'' + csvList_artist_name[i][24] + '\').quicksearch(\'#VOSL>.col\', {});">' + csvList_artist_name[i][24] + '</div>';
 							} else if(url.indexOf('lang=zh-TW') !== -1){
 					 insert_artist_name += '<div class="artist_name_list v_name_txt badge text-bg-secondary mx-1 popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'' + csvList_artist_name[i][21] + '\').quicksearch(\'#VOSL>.col\', {});">' + csvList_artist_name[i][21] + '</div>';
 							} else{
@@ -108,7 +110,7 @@ $(function(){
           insert_vosl += '</div>';
 					
 					insert_vosl += '<div class="card-body">';
-					insert_vosl += '<div class="search_only">' + csvList_vosl[i][1] + '' + csvList_vosl[i][4] + '' + csvList_vosl[i][17] + '' + csvList_vosl[i][18] + '' + csvList_vosl[i][21] + '' + csvList_vosl[i][23] + '</div>';
+					insert_vosl += '<div class="search_only">' + csvList_vosl[i][1] + '' + csvList_vosl[i][4] + '' + csvList_vosl[i][17] + '' + csvList_vosl[i][18] + '' + csvList_vosl[i][20] + '' + csvList_vosl[i][21] + '' + csvList_vosl[i][23] + '' + csvList_vosl[i][24] + '</div>';
 					insert_vosl += '<p class="small mb-1"><i class="bi bi-clock-fill"></i> ' + csvList_vosl[i][22] + '</p>';
 					insert_vosl += '<h5 class="card-title mb-1">' + csvList_vosl[i][3] + '</h5>';
 					 if(params.length>1){
@@ -117,6 +119,8 @@ $(function(){
 								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][17] + '</small></a></div>';
 							} else if(url.indexOf('lang=ko') !== -1){
 								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][18] + '</small></a></div>';
+							} else if(url.indexOf('lang=es') !== -1){
+								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][24] + '</small></a></div>';
 							} else if(url.indexOf('lang=zh-TW') !== -1){
 								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][21] + '</small></a></div>';
 							} else{
@@ -149,6 +153,10 @@ $(function(){
 								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_en.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg);">' + youtubeid + '</div>';
 							} else if(url.indexOf('lang=ko') !== -1){
 								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_ko.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg);">' + youtubeid + '</div>';
+							} else if(url.indexOf('lang=es') !== -1){
+								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_en.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg);">' + youtubeid + '</div>';
+							} else if(url.indexOf('lang=zh-TW') !== -1){
+								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_en.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg);">' + youtubeid + '</div>';
 							} else{
 								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg);">' + youtubeid + '</div>';
 							}
@@ -165,6 +173,8 @@ $(function(){
 					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][17] + '</small></a></div>';
 							} else if(url.indexOf('lang=ko') !== -1){
 					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][18] + '</small></a></div>';
+							} else if(url.indexOf('lang=es') !== -1){
+					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][24] + '</small></a></div>';
 							}else if(url.indexOf('lang=zh-TW') !== -1){
 					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][21] + '</small></a></div>';
 							}else{
@@ -346,6 +356,8 @@ $(function(){
 							if(url.indexOf('lang=en') !== -1){
 								//alert("en");
 								$('html').attr('lang', 'en');
+								$('meta[name="description"]').attr('content', 'This site is a collection of original songs and remixes of original songs by Vtubers and virtual singers.<br/>We are looking forward to hearing from you.');
+								$('meta[property="og:description"]').first().attr('content', 'This site is a collection of original songs and remixes of original songs by Vtubers and virtual singers.');
 								$("body").addClass("lang_en");
 								$(".info_txt").html("This site is a collection of original songs and remixes of original songs by Vtubers and virtual singers.<br/>We are looking forward to hearing from you.");//info
 								$(".form_btn").text("Open the form in a separate tab");//別タブでフォームを開く
@@ -389,6 +401,8 @@ $(function(){
 							}else if(url.indexOf('lang=ko') !== -1){
 								//alert("en");
 								$('html').attr('lang', 'ko');
+								$('meta[name="description"]').attr('content', '이 사이트는 Vtuber, Virtual singer의 오리지널 곡이나 오리지널 곡의 리믹스를 모은 사이트입니다.여러분으로부터의 정보를 기다리고 있습니다.');
+								$('meta[property="og:description"]').first().attr('content', '이 사이트는 Vtuber, Virtual singer의 오리지널 곡이나 오리지널 곡의 리믹스를 모은 사이트입니다.여러분으로부터의 정보를 기다리고 있습니다.');
 								$("body").addClass("lang_ko");
 								$(".info_txt").html("이 사이트는 Vtuber, Virtual singer의 오리지널 곡이나 오리지널 곡의 리믹스를 모은 사이트입니다.<br/>여러분으로부터의 정보를 기다리고 있습니다.");//info
 								$(".form_btn").text("다른 탭에서 양식 열기");//別タブでフォームを開く
@@ -429,9 +443,56 @@ $(function(){
 										group.replace(/ソロ/g,'솔로').replace(/ユニット・グループ/g,'유닛 그룹')
 									);
 								});
+							}else if(url.indexOf('lang=es') !== -1){
+								//スペイン語
+								$('html').attr('lang', 'es');
+								$('meta[name="description"]').attr('content', 'Este sitio recopila canciones originales y remezclas de canciones originales de Vtubers y cantantes virtuales.<br>Aceptamos envíos de todo el mundo.');
+								$('meta[property="og:description"]').first().attr('content', 'Este sitio recopila canciones originales y remezclas de canciones originales de Vtubers y cantantes virtuales.');
+								$("body").addClass("lang_es");
+								$(".info_txt").html("Este sitio recopila canciones originales y remezclas de canciones originales de Vtubers y cantantes virtuales.<br>Aceptamos envíos de todo el mundo.");//info
+								$(".form_btn").text("Abrir el formulario en una nueva pestaña");//別タブでフォームを開く
+								$(".woy").text("Youtube");//Youtubeで見る
+								$(".details_btn").text("Detalles");//詳細
+								$(".search_btn01").text("Buscar por nombre de VTuber");//Vtuber名で検索
+								$(".search_btn02").text("Buscar por año de lanzamiento");//リリース年で検索
+								$(".search_btn03").text("Buscar por género");//ジャンルで検索
+								$(".search_btn04").text("Unidad/Grupo");//ユニット・グループ
+								$(".noresults").text("No encontrado");//見つかりませんでした
+								$(".title_artist").text("artista");//アーティスト
+								$(".title_genre").text("Género");//ジャンル
+								$(".title_release").text("Año de lanzamiento");//リリース年
+								$(".title_belonging").text("Afiliación");//所属
+								$(".title_lyrics").text("Letra");//作詞
+								$(".title_composer").text("Composición");//作曲
+								$(".title_arranger").text("Disposición");//編曲
+								$(".title_player").text("rendimiento");//演奏
+								$(".title_stream").text("Suscripción");//サブスク
+								$(".stream_txt").text("Escuchar en streaming");//ストリーミングで聞く
+								$(".clear_txt").text("Claro");//クリア
+								$(".kikaku01").text("Publica esta canción en el #VTuber楽曲ランキング.");//この楽曲を#VTuber楽曲ランキングでポスト
+								$(".kikaku02").text("※Esto se aplica a los VTubers actualmente activos.");//※現在活動中のVTuberが対象です
+								$(".kikaku03").text("Publica esta pista con el hashtag #ぶいあーる");//この楽曲を#ぶいあーるでポスト
+								$(".detail_txt").text("Para obtener más información, haga clic aquí.");//詳しくはこちら
+								$(".share_btn").text("Compartir en X");//Xでシェアする
+								$("#search").attr("placeholder","Introduzca el término de búsqueda");//検索ワードを入力
+								$(".left_link_txt").text("Los vídeos de portada se pueden encontrar aquí.");//歌ってみたはこちら
+								$('.genre_txt').each(function(){
+									var genre_txt = $(this).html();
+									$(this).html(
+										genre_txt.replace(/ベース/g,'base').replace(/ロック/g,'ROCK').replace(/フィーチャー/g,'Fture ').replace(/ハイテック/g,'High-Tech').replace(/ダブステップ/g,'Dobstep').replace(/コア/g,'Core').replace(/和風/g,'Japanese-style ')
+									);
+								});
+								$('.group').each(function(){
+									var group = $(this).html();
+									$(this).html(
+										group.replace(/ソロ/g,'Solo').replace(/ユニット・グループ/g,'Unidad/Grupo')
+									);
+								});
 							}else if(url.indexOf('lang=zh-TW') !== -1){
 								//alert("en");
 								$('html').attr('lang', 'zh-cmn-Hant');
+								$('meta[name="description"]').attr('content', '本網站收錄了虛擬YouTuber與虛擬歌手創作的原創歌曲及混音作品。我們期待收到您的來信。');
+								$('meta[property="og:description"]').first().attr('content', '本網站收錄了虛擬YouTuber與虛擬歌手創作的原創歌曲及混音作品。我們期待收到您的來信。');
 								$("body").addClass("lang_zh-cmn-Hant");
 								$(".info_txt").html("本網站收錄了虛擬YouTuber與虛擬歌手創作的原創歌曲及混音作品。我們期待收到您的來信。");//info
 								$(".form_btn").text("在另一個分頁開啟表單");//別タブでフォームを開く
