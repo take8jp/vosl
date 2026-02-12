@@ -1,38 +1,82 @@
 
 $(function(){
-				function getParam(name, url) {
-					if (!url) url = window.location.href;
-					name = name.replace(/[\[\]]/g, "\\$&");
-					var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-							results = regex.exec(url);
-					if (!results) return null;
-					if (!results[2]) return '';
-					return decodeURIComponent(results[2].replace(/\+/g, " "));
-				}
-				var search_txt = getParam('search');
-				//alert(search_txt);
-				$('#search').val(search_txt).quicksearch('#VOSL>.col', {'noResults': '#noresults',});
-				
-				//vtuber名で検索
-				var target_artist_name = '#artist_name_tag';
-				var csvList_artist_name;
-				var insert_artist_name = '';
-				//ジャンルで検索
-				var target_genre = '#genre_tag';
-				var csvList_genre;
-				var insert_genre = '';
-				//年号で検索
-				var target_release_year = '#release_year_tag';
-				var csvList_release_year;
-				var insert_release_year = '';
-				//一覧
-				var target_vosl = '#VOSL';
-				var csvList_vosl;
-				var insert_vosl = '';
-				var year = new Date().getFullYear();
-				 var month = new Date().getMonth() + 1;
-				var date = new Date().getDate();
-				var nichiji = year + "" + month + "" + date;
+	//copyright
+	const currentYear = new Date().getFullYear();
+  document.getElementById("year").textContent = currentYear;
+	//copyright
+	function getParam(name, url) {
+		if (!url) url = window.location.href;
+		name = name.replace(/[\[\]]/g, "\\$&");
+		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+				results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
+		var search_txt = getParam('search');
+		//alert(search_txt);
+		$('#search').val(search_txt).quicksearch('#VOSL>.col', {'noResults': '#noresults',});
+
+		//NEWS
+		var target_news = '#NEWS';
+		var csvList_news;
+		var insert_news = '';
+	
+    $.ajax({
+			 url: 'csv/NEWS.csv?' + new Date().getTime() +'',
+       success: function(data) {
+         // csvを配列に格納(NEWS)
+				 csvList_news = $.csv()(data);
+				 // 挿入するHTMLを作成(NEWS)
+         for (var i = 1; i < csvList_news.length; i++) {
+					 //多言語化
+					 params = location.href.split("?");
+					 if(params.length>1){
+							var url = decodeURI(location.search)
+							if(url.indexOf('lang=en') !== -1){
+					 insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][3] + '</li>';
+							} else if(url.indexOf('lang=ko') !== -1){
+					  insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][4] + '</li>';
+							} else if(url.indexOf('lang=es') !== -1){
+					  insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][5] + '</li>';
+							} else if(url.indexOf('lang=zh-TW') !== -1){
+					  insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][6] + '</li>';
+							} else{
+					  insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][2] + '</li>';
+							}
+						} else{
+					  insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][2] + '</li>';
+						}
+         };
+				 
+				 //表示
+         $(target_news).append(insert_news);
+				 
+				 
+       		}
+     		});
+	
+	
+		//vtuber名で検索
+		var target_artist_name = '#artist_name_tag';
+		var csvList_artist_name;
+		var insert_artist_name = '';
+		//ジャンルで検索
+		var target_genre = '#genre_tag';
+		var csvList_genre;
+		var insert_genre = '';
+		//年号で検索
+		var target_release_year = '#release_year_tag';
+		var csvList_release_year;
+		var insert_release_year = '';
+		//一覧
+		var target_vosl = '#VOSL';
+		var csvList_vosl;
+		var insert_vosl = '';
+		var year = new Date().getFullYear();
+		 var month = new Date().getMonth() + 1;
+		var date = new Date().getDate();
+		var nichiji = year + "" + month + "" + date;
 					 
     $.ajax({
 			 url: 'csv/VOSL.csv?' + new Date().getTime() +'',
