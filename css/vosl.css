@@ -30,6 +30,8 @@ body {min-height: 100vh}
 .left_link a{font-size: 13px;color:#ff9800; text-decoration: none !important; padding: 10px 10px 10px 30px; display: block;}
 #country_tag .fi{font-size:40px; margin-bottom: 10px; margin-right:10px;}
 .fi{border: 1px solid #eee;}
+.channel_profile_icon img{position: absolute; z-index:5; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #ddd;right:5px;top:-23px;}
+.card-body{position: relative;}
 /*--sp------------------------------*/
 @media screen and (max-width:719px) {
 	#VOSL {width: 100vw}

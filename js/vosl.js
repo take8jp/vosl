@@ -34,18 +34,18 @@ $(function(){
 					 if(params.length>1){
 							var url = decodeURI(location.search)
 							if(url.indexOf('lang=en') !== -1){
-					 insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][3] + '</li>';
+					 insert_news += '<li class="list-group-item small"><span class="badge text-bg-secondary me-1 small">' + csvList_news[i][1] + '</span>' + csvList_news[i][3] + '</li>';
 							} else if(url.indexOf('lang=ko') !== -1){
-					  insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][4] + '</li>';
+					  insert_news += '<li class="list-group-item small"><span class="badge text-bg-secondary me-1 small">' + csvList_news[i][1] + '</span>' + csvList_news[i][4] + '</li>';
 							} else if(url.indexOf('lang=es') !== -1){
-					  insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][5] + '</li>';
+					  insert_news += '<li class="list-group-item small"><span class="badge text-bg-secondary me-1 small">' + csvList_news[i][1] + '</span>' + csvList_news[i][5] + '</li>';
 							} else if(url.indexOf('lang=zh-TW') !== -1){
-					  insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][6] + '</li>';
+					  insert_news += '<li class="list-group-item small"><span class="badge text-bg-secondary me-1 small">' + csvList_news[i][1] + '</span>' + csvList_news[i][6] + '</li>';
 							} else{
-					  insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][2] + '</li>';
+					  insert_news += '<li class="list-group-item small"><span class="badge text-bg-secondary me-1 small">' + csvList_news[i][1] + '</span>' + csvList_news[i][2] + '</li>';
 							}
 						} else{
-					  insert_news += '<li class="list-group-item"><span class="badge text-bg-secondary me-1">' + csvList_news[i][1] + '</span>' + csvList_news[i][2] + '</li>';
+					  insert_news += '<li class="list-group-item small"><span class="badge text-bg-secondary me-1 small">' + csvList_news[i][1] + '</span>' + csvList_news[i][2] + '</li>';
 						}
          };
 				 
@@ -164,8 +164,9 @@ $(function(){
           insert_vosl += '</div>';
 					
 					insert_vosl += '<div class="card-body">';
+					insert_vosl += '<div class="channel_profile_icon"><img loading="lazy" src="' + csvList_vosl[i][26] + '" alt="' + csvList_vosl[i][1] + '"></div>';
 					insert_vosl += '<div class="search_only">' + csvList_vosl[i][1] + '' + csvList_vosl[i][4] + '' + csvList_vosl[i][17] + '' + csvList_vosl[i][18] + '' + csvList_vosl[i][20] + '' + csvList_vosl[i][21] + '' + csvList_vosl[i][23] + '' + csvList_vosl[i][24] + ' COUN-' + csvList_vosl[i][25] + '</div>';
-					insert_vosl += '<p class="small mb-1"><i class="bi bi-clock-fill"></i> ' + csvList_vosl[i][22] + '</p>';
+					insert_vosl += '<p class="small mb-1" style="margin-top:-8px;font-size:12px;"><i class="bi bi-clock-fill" style="font-size:12px;"></i> ' + csvList_vosl[i][22] + '</p>';
 					insert_vosl += '<h5 class="card-title mb-1">' + csvList_vosl[i][3] + '</h5>';
 					 if(params.length>1){
 							var url = decodeURI(location.search)
@@ -237,7 +238,7 @@ $(function(){
 						} else{
 					insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
 						}
-					insert_vosl += '<span class="badge text-bg-secondary mx-1 group">' + csvList_vosl[i][20] + '</span>';
+					insert_vosl += '<span class="badge text-bg-secondary mx-1 group mb-2">' + csvList_vosl[i][20] + '</span>';
 					insert_vosl += '</div>';
           insert_vosl += '<div class="col">';
 					insert_vosl += '<table class="table table-sm">';
