@@ -28,6 +28,8 @@ body {min-height: 100vh}
 .card{content-visibility: auto;contain-intrinsic-size: 240px;contain: content;}
 .left_link{position: fixed; left:-20px; bottom: 10px; background: #000; border-radius: 10px; text-decoration: none;}
 .left_link a{font-size: 13px;color:#ff9800; text-decoration: none !important; padding: 10px 10px 10px 30px; display: block;}
+#country_tag .fi{font-size:40px; margin-bottom: 10px; margin-right:10px;}
+.fi{border: 1px solid #eee;}
 /*--sp------------------------------*/
 @media screen and (max-width:719px) {
 	#VOSL {width: 100vw}

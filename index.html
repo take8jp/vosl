@@ -13,6 +13,7 @@
     <link href="css/reset.css" rel="stylesheet" type="text/css">
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 		<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three-dots/0.3.2/three-dots.min.css" as="style" onload="this.rel='stylesheet'">
@@ -123,6 +124,11 @@
 				<a href="#" class="btn text-bg-secondary mb-1 btn-sm search_btn04"onclick="$('#search').val('ユニット・グループ').quicksearch('#VOSL>.col', {});" title="ユニット・グループ">ユニット・グループ</a>
 				<a href="#" class="btn text-bg-secondary mb-1 btn-sm search_btn05"onclick="$('#search').val('NEW!').quicksearch('#VOSL>.col', {});" title="NEW!">NEW!</a>
 				<a href="#" class="btn text-bg-secondary mb-1 btn-sm search_btn05"onclick="$('#search').val('ReMIX!').quicksearch('#VOSL>.col', {});" title="ReMIX!">ReMIX!</a>
+				<a href="#country" class="btn popup-modal text-bg-secondary mb-1 btn-sm search_btn02" title="拠点で検索">拠点で検索</a>
+				<div id="country" class="mfp-hide modal_bg">
+					<div id="country_tag" class="mb-1"></div>
+					<div class="badge text-bg-dark popup-modal-dismiss clear_txt" onclick="$('#search').val('').quicksearch('#VOSL>.col', {});">クリア</div>
+				</div>
 			</div>
 			<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-4" id="VOSL"></div>
 			<div id="noresults" class="mt-5 mb-5 text-center h3 noresults">見つかりませんでした</div>

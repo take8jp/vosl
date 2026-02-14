@@ -69,6 +69,10 @@ $(function(){
 		var target_release_year = '#release_year_tag';
 		var csvList_release_year;
 		var insert_release_year = '';
+		//拠点で検索
+		var target_country = '#country_tag';
+		var csvList_country;
+		var insert_country = '';
 		//一覧
 		var target_vosl = '#VOSL';
 		var csvList_vosl;
@@ -116,6 +120,12 @@ $(function(){
 				 for (var i = 1; i < csvList_release_year.length; i++) {
 					 insert_release_year += '<div class="release_year_list badge text-bg-secondary mx-1 popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'' + csvList_release_year[i][5] + '\').quicksearch(\'#VOSL>.col\', {});">' + csvList_release_year[i][5] + '</div>';
          };
+         // csvを配列に格納(拠点で検索)
+				 csvList_country = $.csv()(data);
+				 // 挿入するHTMLを作成(拠点で検索)
+				 for (var i = 1; i < csvList_country.length; i++) {
+					 insert_country += '<span class="country_list popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'COUN-' + csvList_country[i][25] + '\').quicksearch(\'#VOSL>.col\', {});"><span class="country">' + csvList_country[i][25] + '</span></span>';
+         };
          // csvを配列に格納(一覧)
          csvList_vosl = $.csv()(data);
          // 挿入するHTMLを作成
@@ -154,24 +164,24 @@ $(function(){
           insert_vosl += '</div>';
 					
 					insert_vosl += '<div class="card-body">';
-					insert_vosl += '<div class="search_only">' + csvList_vosl[i][1] + '' + csvList_vosl[i][4] + '' + csvList_vosl[i][17] + '' + csvList_vosl[i][18] + '' + csvList_vosl[i][20] + '' + csvList_vosl[i][21] + '' + csvList_vosl[i][23] + '' + csvList_vosl[i][24] + '</div>';
+					insert_vosl += '<div class="search_only">' + csvList_vosl[i][1] + '' + csvList_vosl[i][4] + '' + csvList_vosl[i][17] + '' + csvList_vosl[i][18] + '' + csvList_vosl[i][20] + '' + csvList_vosl[i][21] + '' + csvList_vosl[i][23] + '' + csvList_vosl[i][24] + ' COUN-' + csvList_vosl[i][25] + '</div>';
 					insert_vosl += '<p class="small mb-1"><i class="bi bi-clock-fill"></i> ' + csvList_vosl[i][22] + '</p>';
 					insert_vosl += '<h5 class="card-title mb-1">' + csvList_vosl[i][3] + '</h5>';
 					 if(params.length>1){
 							var url = decodeURI(location.search)
 							if(url.indexOf('lang=en') !== -1){
-								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][17] + '</small></a></div>';
+								insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][17] + '</small></a></div>';
 							} else if(url.indexOf('lang=ko') !== -1){
-								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][18] + '</small></a></div>';
+								insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][18] + '</small></a></div>';
 							} else if(url.indexOf('lang=es') !== -1){
-								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][24] + '</small></a></div>';
+								insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][24] + '</small></a></div>';
 							} else if(url.indexOf('lang=zh-TW') !== -1){
-								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][21] + '</small></a></div>';
+								insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][21] + '</small></a></div>';
 							} else{
-								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
+								insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
 							}
 						} else{
-								insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
+								insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
 						}
 					 insert_vosl += '<div class="card-text">';
 					if(csvList_vosl[i][4]==""){}else{
@@ -214,18 +224,18 @@ $(function(){
 					if(params.length>1){
 							var url = decodeURI(location.search)
 							if(url.indexOf('lang=en') !== -1){
-					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][17] + '</small></a></div>';
+					insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][17] + '</small></a></div>';
 							} else if(url.indexOf('lang=ko') !== -1){
-					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][18] + '</small></a></div>';
+					insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][18] + '</small></a></div>';
 							} else if(url.indexOf('lang=es') !== -1){
-					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][24] + '</small></a></div>';
+					insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][24] + '</small></a></div>';
 							}else if(url.indexOf('lang=zh-TW') !== -1){
-					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][21] + '</small></a></div>';
+					insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][21] + '</small></a></div>';
 							}else{
-					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
+					insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
 							}
 						} else{
-					insert_vosl += '<div class=" mb-1"><a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
+					insert_vosl += '<div class=" mb-1"><span class="country">' + csvList_vosl[i][25] + '</span> <a href="' + csvList_vosl[i][15] + '" target="_blank" class="link-dark link-underline-opacity-0-hover"><i class="bi bi-play-btn-fill"></i><small class=" ms-1 v_name_txt">' + csvList_vosl[i][1] + '</small></a></div>';
 						}
 					insert_vosl += '<span class="badge text-bg-secondary mx-1 group">' + csvList_vosl[i][20] + '</span>';
 					insert_vosl += '</div>';
@@ -304,11 +314,18 @@ $(function(){
          $(target_artist_name).append(insert_artist_name);
          $(target_genre).append(insert_genre);
 				 $(target_release_year).append(insert_release_year);
+				 $(target_country).append(insert_country);
          $(target_vosl).append(insert_vosl);
+				 //重複をまとめる
 				 const texts_release_year = new Set();
 				 for (let li of document.querySelectorAll(".release_year_list")) {
 						const string = li.textContent;
 						texts_release_year.has(string) ? li.remove() : texts_release_year.add(string);
+					}
+				 const texts_country = new Set();
+				 for (let li of document.querySelectorAll(".country_list")) {
+						const string = li.textContent;
+						texts_country.has(string) ? li.remove() : texts_country.add(string);
 					}
 				 const texts_artist_name = new Set();
 				 for (let li of document.querySelectorAll(".artist_name_list")) {
@@ -392,6 +409,14 @@ $(function(){
 						//クリックで置き換え
 						$(this).after('<iframe src="https://www.youtube.com/embed/' + youtubeid + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
       		});
+				 //countryを国旗に変換
+					var country = $('.country').html();
+				 $('.country').each(function(){
+						var country = $(this).html();
+						$(this).html(
+							country.replace(/未設定/g,'').replace(/JP/g,'<span class="fi fi-jp"></span>').replace(/US/g,'<span class="fi fi-us"></span>').replace(/HK/g,'<span class="fi fi-hk"></span>').replace(/AT/g,'<span class="fi fi-at"></span>').replace(/CA/g,'<span class="fi fi-ca"></span>').replace(/MY/g,'<span class="fi fi-my"></span>').replace(/TH/g,'<span class="fi fi-th"></span>').replace(/ID/g,'<span class="fi fi-id"></span>')
+						);
+					});
 					 //多言語化
 						if(params.length>1){
 							var url = decodeURI(location.search)
