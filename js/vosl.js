@@ -436,6 +436,7 @@ $(function(){
 								$(".search_btn02").text("Search by Release Year");//リリース年で検索
 								$(".search_btn03").text("Search by Genre");//ジャンルで検索
 								$(".search_btn04").text("Unit/Group");//ユニット・グループ
+								$(".search_btn06").text("Search by location");//拠点で検索
 								$(".noresults").text("Not found.");//見つかりませんでした
 								$(".title_artist").text("artist");//アーティスト
 								$(".title_genre").text("Genre");//ジャンル
@@ -481,6 +482,7 @@ $(function(){
 								$(".search_btn02").text("출시년도 검색");//リリース年で検索
 								$(".search_btn03").text("장르로 검색");//ジャンルで検索
 								$(".search_btn04").text("유닛·그룹");//ユニット・グループ
+								$(".search_btn06").text("거점으로 검색");//拠点で検索
 								$(".noresults").text("찾을 수 없음");//見つかりませんでした
 								$(".title_artist").text("아티스트");//アーティスト
 								$(".title_genre").text("장르");//ジャンル
@@ -526,6 +528,7 @@ $(function(){
 								$(".search_btn02").text("Buscar por año de lanzamiento");//リリース年で検索
 								$(".search_btn03").text("Buscar por género");//ジャンルで検索
 								$(".search_btn04").text("Unidad/Grupo");//ユニット・グループ
+								$(".search_btn06").text("Buscar por ubicación");//拠点で検索
 								$(".noresults").text("No encontrado");//見つかりませんでした
 								$(".title_artist").text("artista");//アーティスト
 								$(".title_genre").text("Género");//ジャンル
@@ -571,6 +574,7 @@ $(function(){
 								$(".search_btn02").text("依發行年份搜尋");//リリース年で検索
 								$(".search_btn03").text("按類型搜尋");//ジャンルで検索
 								$(".search_btn04").text("單元・團體");//ユニット・グループ
+								$(".search_btn06").text("以據點搜尋");//拠点で検索
 								$(".noresults").text("找不到");//見つかりませんでした
 								$(".title_artist").text("藝術家");//アーティスト
 								$(".title_genre").text("類型");//ジャンル
