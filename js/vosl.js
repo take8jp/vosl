@@ -205,18 +205,18 @@ $(function(){
 					 if(params.length>1){
 							var url = decodeURI(location.search)
 							if(url.indexOf('lang=en') !== -1){
-								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_en.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg);">' + youtubeid + '</div>';
+								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_en.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.webp);">' + youtubeid + '</div>';
 							} else if(url.indexOf('lang=ko') !== -1){
-								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_ko.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg);">' + youtubeid + '</div>';
+								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_ko.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.webp);">' + youtubeid + '</div>';
 							} else if(url.indexOf('lang=es') !== -1){
-								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_en.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg);">' + youtubeid + '</div>';
+								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_en.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.webp);">' + youtubeid + '</div>';
 							} else if(url.indexOf('lang=zh-TW') !== -1){
-								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_en.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg);">' + youtubeid + '</div>';
+								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload_en.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.webp);">' + youtubeid + '</div>';
 							} else{
-								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg);">' + youtubeid + '</div>';
+								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.webp);">' + youtubeid + '</div>';
 							}
 						} else{
-								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg);">' + youtubeid + '</div>';
+								insert_vosl += '<div class="youtube_playon" style="background-image:url(Images/youtubeload.png),url(https://img.youtube.com/vi/' + youtubeid + '/mqdefault.webp);">' + youtubeid + '</div>';
 						}
 //					insert_vosl += '<iframe src="https://www.youtube.com/embed/' + youtubeid + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
 					insert_vosl += '</div>';
