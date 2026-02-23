@@ -415,7 +415,7 @@ $(function(){
 				 $('.country').each(function(){
 						var country = $(this).html();
 						$(this).html(
-							country.replace(/未設定/g,'').replace(/JP/g,'<span class="fi fi-jp"></span>').replace(/US/g,'<span class="fi fi-us"></span>').replace(/HK/g,'<span class="fi fi-hk"></span>').replace(/AT/g,'<span class="fi fi-at"></span>').replace(/CA/g,'<span class="fi fi-ca"></span>').replace(/MY/g,'<span class="fi fi-my"></span>').replace(/TH/g,'<span class="fi fi-th"></span>').replace(/ID/g,'<span class="fi fi-id"></span>')
+							country.replace(/未設定/g,'').replace(/JP/g,'<span class="fi fi-jp"></span>').replace(/US/g,'<span class="fi fi-us"></span>').replace(/HK/g,'<span class="fi fi-hk"></span>').replace(/AT/g,'<span class="fi fi-at"></span>').replace(/CA/g,'<span class="fi fi-ca"></span>').replace(/MY/g,'<span class="fi fi-my"></span>').replace(/TH/g,'<span class="fi fi-th"></span>').replace(/ID/g,'<span class="fi fi-id"></span>').replace(/KR/g,'<span class="fi fi-kr"></span>')
 						);
 					});
 					 //多言語化
