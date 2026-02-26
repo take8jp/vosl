@@ -191,7 +191,7 @@ $(function(){
           insert_vosl += '</div>';
           insert_vosl += '<div class="d-flex justify-content-between align-items-center mt-2">';
           insert_vosl += '<div class="btn-group">';
-          insert_vosl += '<a href="' + csvList_vosl[i][2] + '" target="_blank" class="btn btn-sm btn-outline-secondary woy" title="Youtube">Youtubeで見る</a>';
+          insert_vosl += '<a href="' + csvList_vosl[i][2] + '" target="_blank" class="btn btn-sm btn-outline-secondary woy" aria-label="Youtubeで見る">Youtubeで見る</a>';
           insert_vosl += '<a href="#exampleModal' + i + '" class="btn btn-sm btn-outline-secondary popup-modal details_btn">詳細</a>';
           insert_vosl += '</div>';
 					 if(csvList_vosl[i][5]==""){}else{
