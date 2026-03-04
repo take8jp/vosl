@@ -139,7 +139,7 @@ $(function(){
 					insert_vosl += '<div class="card">';
 					insert_vosl += '<div class="thum">';
 					//insert_vosl += '<img src="https://img.youtube.com/vi/' + youtubeid + '/sddefault.jpg" class="card-img-top" alt="...">';
-					insert_vosl += '<a href="#exampleModal' + i + '" class="popup-modal" title="' + csvList_vosl[i][3] + '"><img src="Images/loading-buffering.gif" data-src="https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg" class="card-img-top lazyload" alt="' + csvList_vosl[i][3] + '" width="320" height="180"></a>';
+					insert_vosl += '<a href="#exampleModal' + i + '" class="popup-modal" title="' + csvList_vosl[i][3] + '"><img src="Images/loading-buffering.gif" data-src="https://img.youtube.com/vi/' + youtubeid + '/mqdefault.jpg" class="card-img-top lazyload" alt="' + csvList_vosl[i][3] + '" width="320" height="180" fetchpriority="high" loading="lazy"></a>';
 //					 if(csvList_vosl[i][7]==""){}else{
 //					insert_vosl += '<div class=""><div class="user_icon rounded-circle" style=" background: url(' + csvList_vosl[i][7] + ')center center;"></div></div>';
 //					};
@@ -191,7 +191,7 @@ $(function(){
           insert_vosl += '</div>';
           insert_vosl += '<div class="d-flex justify-content-between align-items-center mt-2">';
           insert_vosl += '<div class="btn-group">';
-          insert_vosl += '<a href="' + csvList_vosl[i][2] + '" target="_blank" class="btn btn-sm btn-outline-secondary woy" aria-label="Youtubeで見る">Youtubeで見る</a>';
+          insert_vosl += '<a href="' + csvList_vosl[i][2] + '" target="_blank" class="btn btn-sm btn-outline-secondary woy" aria-label="' + csvList_vosl[i][3] + '／' + csvList_vosl[i][1] + '(Youtube)">Youtubeで見る</a>';
           insert_vosl += '<a href="#exampleModal' + i + '" class="btn btn-sm btn-outline-secondary popup-modal details_btn">詳細</a>';
           insert_vosl += '</div>';
 					 if(csvList_vosl[i][5]==""){}else{
@@ -345,7 +345,7 @@ $(function(){
 				// 日本語対応ハッシュタグ抽出
 				const tags = text.match(/#[\w\u3040-\u30ff\u4e00-\u9faf]+/g);
 				if (!tags) return;
-				ul.innerHTML = tags.map(tag => `<a class="badge text-bg-secondary me-1 popup-modal-dismiss" onclick="$('#search').val('${tag}').quicksearch('#VOSL>.col', {});">${tag}</a>`).join('');
+				ul.innerHTML = tags.map(tag => `<span class="badge text-bg-secondary me-1 popup-modal-dismiss onclickbtn" onclick="$('#search').val('${tag}').quicksearch('#VOSL>.col', {});">${tag}</span>`).join('');
 			});
 			//ハッシュタグ成型ここまで
 				 //ランダム表示
