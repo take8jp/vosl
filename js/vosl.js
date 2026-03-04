@@ -1,4 +1,10 @@
 
+			window.onload = function() {
+				const spinner = document.getElementById('loading');
+				spinner.classList.add('loaded');
+				$('main').css("opacity","1");
+				$('body').css("background","#fff");
+			};
 $(function(){
 	//copyright
 	const currentYear = new Date().getFullYear();
@@ -639,7 +645,3 @@ $(function(){
         });
 	
       });
-			window.onload = function() {
-				const spinner = document.getElementById('loading');
-				spinner.classList.add('loaded');
-			};
