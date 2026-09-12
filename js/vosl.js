@@ -67,6 +67,10 @@ $(function(){
 		var target_artist_name = '#artist_name_tag';
 		var csvList_artist_name;
 		var insert_artist_name = '';
+		//作曲者で検索
+		var target_composer_name = '#composer_name_tag';
+		var csvList_composer_name;
+		var insert_composer_name = '';
 		//ジャンルで検索
 		var target_genre = '#genre_tag';
 		var csvList_genre;
@@ -114,6 +118,14 @@ $(function(){
 					 insert_artist_name += '<div class="artist_name_list v_name_txt badge text-bg-secondary mx-1 popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'' + csvList_artist_name[i][1] + '\').quicksearch(\'#VOSL>.col\', {});">' + csvList_artist_name[i][1] + '</div>';
 						}
          };
+				 
+         // csvを配列に格納(作曲者で検索)
+				 csvList_composer_name = $.csv()(data);
+				 // 挿入するHTMLを作成(作曲者で検索)
+         for (var i = 1; i < csvList_composer_name.length; i++) {
+					 insert_composer_name += '<div class="composer_name_list v_name_txt badge text-bg-secondary mx-1 popup-modal-dismiss mb-2" onclick="$(\'#search\').val(\'' + csvList_composer_name[i][10] + '\').quicksearch(\'#VOSL>.col\', {});">' + csvList_composer_name[i][10] + '</div>';
+         };
+				 
          // csvを配列に格納(ジャンルで検索)
 				 csvList_genre = $.csv()(data);
 				 // 挿入するHTMLを作成(ジャンルで検索)
@@ -362,6 +374,7 @@ $(function(){
          };
 				 //表示
          $(target_artist_name).append(insert_artist_name);
+         $(target_composer_name).append(insert_composer_name);
          $(target_genre).append(insert_genre);
 				 $(target_release_year).append(insert_release_year);
 				 $(target_country).append(insert_country);
@@ -381,6 +394,11 @@ $(function(){
 				 for (let li of document.querySelectorAll(".artist_name_list")) {
 						const string = li.textContent;
 						texts_artist_name.has(string) ? li.remove() : texts_artist_name.add(string);
+					}
+				 const texts_composer_name = new Set();
+				 for (let li of document.querySelectorAll(".composer_name_list")) {
+						const string = li.textContent;
+						texts_composer_name.has(string) ? li.remove() : texts_composer_name.add(string);
 					}
 				 const texts_genre = new Set();
 				 for (let li of document.querySelectorAll(".genre_list")) {
@@ -423,6 +441,9 @@ $(function(){
 						$('#search2').quicksearch('#artist_name_tag>.artist_name_list', {
 							'noResults': '#noresults2',//検索該当無しの場合表示する対象
 						});
+						$('#search3').quicksearch('#composer_name_tag>.composer_name_list', {
+							'noResults': '#noresults3',//検索該当無しの場合表示する対象
+						});
 					});
 					$("#search").keydown(function (e) {
 						if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
@@ -432,6 +453,13 @@ $(function(){
 						}
 					});
 					$("#search2").keydown(function (e) {
+						if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
+							return false;
+						} else {
+							return true;
+						}
+					});
+					$("#search3").keydown(function (e) {
 						if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
 							return false;
 						} else {
