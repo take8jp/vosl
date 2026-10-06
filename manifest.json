@@ -1,7 +1,7 @@
 {
   "name": "VOSL[β]｜Vtuber Original Song List.",
   "short_name": "VOSL[β]",
-  "start_url": "./index.html",
+  "start_url": "./vosl/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#8768fb",
