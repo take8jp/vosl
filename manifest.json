@@ -4,7 +4,7 @@
   "start_url": "./vosl/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#8768fb",
+  "theme_color": "#7657ea",
   "icons": [
     {
       "src": "icon-192.png",
