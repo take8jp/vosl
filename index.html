@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VOSL[β]｜Vtuber Original Song List.</title>
+		<link rel="manifest" href="manifest.json">
 		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -165,5 +166,18 @@
 			</div>
 		</footer>
 		</main>
+		<script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", () => {
+				navigator.serviceWorker.register("./sw.js")
+					.then((registration) => {
+						console.log("Service Worker registered:", registration.scope);
+					})
+					.catch((error) => {
+						console.error("Service Worker registration failed:", error);
+					});
+			});
+		}
+		</script>
   </body>
 </html>
