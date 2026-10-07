@@ -1,11 +1,11 @@
 const CACHE_NAME = "my-app-v1";
 
 const FILES_TO_CACHE = [
-  "./vosl/",
-  "./vosl/index.html",
-  "./vosl/manifest.json",
-  "./vosl/icon-192.png",
-  "./vosl/icon-512.png"
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./icon-192.png",
+  "./icon-512.png"
 ];
 
 // インストール
